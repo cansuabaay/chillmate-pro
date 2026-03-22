@@ -1,0 +1,45 @@
+/* Base reset + calm page background */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --text: #1a2422;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text);
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Soft mist + sage — wellness, not stark white */
+  background-color: var(--bg-base, #e6ebe8);
+  background-image:
+    radial-gradient(1000px 520px at 12% -8%, rgba(145, 195, 175, 0.45), transparent 58%),
+    radial-gradient(800px 480px at 92% 8%, rgba(165, 185, 215, 0.22), transparent 52%),
+    radial-gradient(640px 380px at 48% 102%, rgba(230, 215, 200, 0.35), transparent 48%),
+    var(--bg-gradient, linear-gradient(168deg, #e4ece8 0%, #e8edf2 42%, #f0ebe6 100%));
+  background-attachment: fixed;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
