@@ -1,4 +1,4 @@
-# ChillMate Lite
+# ChillMate Pro
 
 ## Purpose
 
