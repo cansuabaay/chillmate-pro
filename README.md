@@ -1,93 +1,155 @@
-# ChillMate Pro
+# ChillMate Pro+
 
-## Purpose
+A personalized, explainable stress awareness web app inspired by wearable-based stress detection systems.
 
-**ChillMate Lite** is a small web app that estimates a **stress score (0–100)** from your baseline habits and today’s inputs. It is inspired by wellness and wearable-style stress awareness, but it runs entirely in the browser and does **not** use a server or store your data.
+This project demonstrates how behavioral and physiological signals can be combined with a baseline-based approach to estimate stress levels, provide insights, and support self-awareness.
 
-It is meant for learning, demos, and gentle self-reflection—not clinical use.
+ **Live Demo:**  
+https://chillmate-lite.vercel.app
 
-## Features
+---
 
-- **Welcome screen** with a short introduction and a one-click start
-- **Baseline form** (resting heart rate, usual sleep, usual activity level)
-- **Today’s data form** (current heart rate, sleep, movement, screen time, caffeine, mood)
-- **Results** with a score, Low / Medium / High category, short explanations, and three tips
-- **Responsive layout** that works on phones and desktops
-- **No backend**—everything runs locally in your browser
+## Key Features
+
+### User Onboarding & Personal Profile
+- Collects user information (name, age, lifestyle context)
+- Personalizes experience based on user profile
+
+### Personal Baseline System
+- Resting heart rate
+- Average sleep duration
+- Usual activity level
+- Screen time & caffeine habits
+
+→ Used as a reference point for all stress calculations
+
+---
+
+### Daily Stress Check
+Users input:
+- Heart rate
+- Sleep hours
+- Activity level
+- Screen time
+- Caffeine intake
+- Mood (emoji-based selection)
+
+---
+
+### Advanced Stress Scoring
+- Baseline comparison logic
+- Weighted multi-factor model:
+  - Heart rate & sleep → high impact
+  - Movement & screen time → medium
+  - Mood & caffeine → supportive factors
+- Score normalized to **0–100**
+
+---
+
+### Explainable AI Approach
+Instead of a black-box result, the app explains:
+
+#### Why this result?
+- Baseline deviations
+- Behavioral patterns
+
+#### Today’s Insight
+- Main driver of stress (sleep, HR, behavior)
+
+#### Stress Pattern Detection
+- Sleep-driven
+- Physiological
+- Behavioral
+- Mixed
+
+---
+
+### Smart Recommendations
+Dynamic suggestions based on detected stress drivers:
+- Recovery suggestions
+- Digital detox
+- Movement reminders
+- Breathing & relaxation
+
+---
+
+### Weekly Insights Dashboard
+- Weekly average stress
+- Trend analysis (improving / worsening)
+- Most stressful day
+- Dominant weekly stress factor
+- Mood & sleep patterns
+
+---
+
+### History Tracking
+- Previous stress checks
+- Score + insight + pattern
+- Stored locally using browser storage
+
+---
+
+### What-If Simulator
+Simulate improvements:
+- More sleep
+- Less screen time
+- Increased activity
+
+→ See how stress score would change
+
+---
+
+### Downloadable Report
+Export results as JSON:
+- Profile
+- Baseline
+- Daily input
+- Stress score
+- Insights & recommendations
+
+---
 
 ## Technologies
 
-- **React** — UI and screen flow
-- **Vite** — dev server and production build
-- **Plain CSS** — layout and styling (no UI framework required)
+- **React** — UI and state management  
+- **Vite** — development & build tool  
+- **CSS** — custom styling  
+- **LocalStorage** — data persistence (no backend)
 
-## How the stress score works (simple explanation)
+---
 
-The app compares **today** to **your baseline** and looks at several everyday signals:
+## How It Works (Simplified)
 
-- **Heart rate** — higher than your resting baseline adds to the score
-- **Sleep** — less sleep than your usual average adds to the score
-- **Movement** — less movement than your usual level adds to the score
-- **Screen time** — more hours add to the score
-- **Caffeine** — more servings add to the score
-- **Mood** — lower mood ratings add to the score
+The app compares **today’s inputs** with **personal baseline values**.
 
-Each factor is turned into a **0–100 “stress contribution”**, then they are combined with a **fixed weight** (for example, sleep and heart rate are weighted a bit more than caffeine). The final number is **rounded** and **capped between 0 and 100**.
+Each factor contributes to stress:
 
-**Categories** (for display only):
+- Higher-than-baseline heart rate ↑ stress  
+- Lower-than-usual sleep ↑ stress  
+- Reduced movement ↑ stress  
+- Increased screen time ↑ stress  
+- Higher caffeine intake ↑ stress  
+- Negative mood ↑ stress  
 
-- **Low** — score below 40  
-- **Medium** — score 40–69  
-- **High** — score 70 and above  
+Each factor is weighted and combined into a final score (0–100).
 
-This is a **rough demo model**, not a medical measurement.
+---
 
 ## Disclaimer
 
-**ChillMate Lite is not a medical device and does not diagnose any condition.**  
-Treat the score and text as educational and informational only. If you have health concerns or feel unwell, contact a qualified healthcare professional.
+ChillMate Pro+ is **not a medical device** and does not provide diagnosis.
 
-## Run locally
+It is designed for:
+- educational purposes  
+- self-awareness  
+- demonstration of stress modeling concepts  
 
-**Requirements:** [Node.js](https://nodejs.org/) (LTS recommended)
+If you have health concerns, consult a qualified professional.
 
-1. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-2. Start the development server:
-
-   ```bash
-   npm run dev
-   ```
-
-3. Open the URL shown in the terminal (often `http://localhost:5173`).
-
-**Other commands:**
-
-- `npm run build` — create a production build in the `dist` folder  
-- `npm run preview` — preview the production build locally  
-- `npm run lint` — run ESLint  
-
-## Deploy on Vercel
-
-ChillMate Lite is a static **Vite** app. You can deploy it on [Vercel](https://vercel.com/) in a few steps:
-
-1. Push this project to a Git repository (GitHub, GitLab, or Bitbucket).
-2. In Vercel, choose **Add New → Project** and import that repository.
-3. Vercel usually detects **Vite** automatically. If you set it manually:
-   - **Framework Preset:** Vite  
-   - **Build Command:** `npm run build`  
-   - **Output Directory:** `dist`  
-   - **Install Command:** `npm install`  
-4. Click **Deploy**.
-
-After deployment, Vercel gives you a live URL. Future pushes to your main branch can trigger automatic redeploys if you enable them.
-
-## Live Demo
-https://chillmate-lite.vercel.app
 ---
 
-*Built for learning — stress estimation is illustrative only.*
+## Run Locally
+
+```bash
+npm install
+npm run dev
