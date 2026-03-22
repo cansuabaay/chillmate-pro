@@ -86,6 +86,8 @@ ChillMate Lite is a static **Vite** app. You can deploy it on [Vercel](https://v
 
 After deployment, Vercel gives you a live URL. Future pushes to your main branch can trigger automatic redeploys if you enable them.
 
+## Live Demo
+https://chillmate-lite.vercel.app
 ---
 
 *Built for learning — stress estimation is illustrative only.*
