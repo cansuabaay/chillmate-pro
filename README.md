@@ -5,7 +5,7 @@ A personalized, explainable stress awareness web app inspired by wearable-based 
 This project demonstrates how behavioral and physiological signals can be combined with a baseline-based approach to estimate stress levels, provide insights, and support self-awareness.
 
  **Live Demo:**  
-cansuabaay-chillmate-pro.vercel.app
+https://cansuabaay-chillmate-pro.vercel.app
 
 ---
 
